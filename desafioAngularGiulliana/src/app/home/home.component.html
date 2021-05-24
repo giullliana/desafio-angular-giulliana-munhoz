@@ -1,22 +1,58 @@
-<nav class="navbar navbar-expand-lg navbar-danger bg-danger">
+<nav class="navbar navbar-expand-lg navbar-danger bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand text-white" href="#"> Personagens</a>
+     
+      <a class="navbar-brand text-white nav-link" routerLink="/home"> Personagens</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                    <li class="nav-item">
-            <a class="nav-link text-white" href="#">Detalhes</a>
+            <a class="nav-link text-white nav-link" href="#detalhes">Detalhes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Golden HQ!</a>
+            <a class="nav-link text-white" href="#hqmaiscara">Golden HQ!</a>
           </li>
         </ul>
         <span class="navbar-text">
-            <button class="btn btn-light my-2 my-sm-0" type="submit">Sair</button>
+            <button  class="btn btn-light my-2 my-sm-0" type="submit" (click)='sair()'>Sair</button>
             </span>
       </div>
       
     </div>
   </nav>
+  <!--Carroussel-->
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://papers.co/wallpaper/papers.co-ai55-marvel-logo-film-art-illust-minimal-bokeh-36-3840x2400-4k-wallpaper.jpg" class="d-block w-100" alt="Walpaper">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.enjpg.com/img/2020/marvel-5-scaled.jpg" class="d-block w-100" alt="HQ">
+      </div>
+      
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!--/Carroussel-->
+
+  <!--CardsHerois-->
+  <div class="card-group">
+    
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Conheça este Herói</p>
+      <a href="#detahes" class="btn btn-danger">Sobre..</a>
+    </div>
+  </div>
+</div>
+  <!--/CardsHerois-->
