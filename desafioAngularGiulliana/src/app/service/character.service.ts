@@ -11,7 +11,7 @@ import {Md5} from 'ts-md5/dist/md5';
 export class CharacterService {
 
     constructor(private http: HttpClient) { }
-    getAllCharacters(): Observable<Character[]> {
+    getAllCharacters(): Observable<any> {
         const ts = new Date().getTime()
         const hash = Md5.hashStr(ts+environment.privateKey+environment.publicKey)
         const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`
