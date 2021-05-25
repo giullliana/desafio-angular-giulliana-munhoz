@@ -11,13 +11,15 @@ import { CharacterService } from '../service/character.service';
 export class HomeComponent implements OnInit {
   characters!: Character[];
   router: any;
+  character: Character = new Character()
+  idCharacters = environment.privateKey
 
   constructor(
     private characterService : CharacterService
   ) { }
 
-  ngOnInit(): void {
-    this.getAllCharacters
+  ngOnInit() {
+    this.getAllCharacters ()
   }
   getAllCharacters(){
     this.characterService.getAllCharacters().subscribe((resp : Character[])=>{
@@ -30,5 +32,6 @@ export class HomeComponent implements OnInit {
   sair(){
     this.router.navigate()
              }
+             
 
 }
