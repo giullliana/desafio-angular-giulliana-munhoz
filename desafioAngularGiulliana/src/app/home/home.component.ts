@@ -15,23 +15,34 @@ export class HomeComponent implements OnInit {
   idCharacters = environment.privateKey
 
   constructor(
-    private characterService : CharacterService
+    private characterService: CharacterService
   ) { }
 
   ngOnInit() {
-    this.getAllCharacters ()
+    this.characters = []
+    this.getAllCharacters()
+
   }
-  getAllCharacters(){
-    this.characterService.getAllCharacters().subscribe((resp : Character[])=>{
-      console.log(resp)
-      this.characters= resp
+  getAllCharacters() {
+    this.characterService.getAllCharacters().subscribe(resp => {
+
+      resp.data.results.map((character: any) => {
+        let current_character = new Character()
+        current_character.id = character.id
+        current_character.name = character.name
+        current_character.description = character.description
+        current_character.image = character.thumbnail.path + "." + character.thumbnail.extension
+        this.characters.push(current_character)
+      })
+
+
     }
     )
   }
-  
-  sair(){
+
+  sair() {
     this.router.navigate()
-             }
-             
+  }
+
 
 }

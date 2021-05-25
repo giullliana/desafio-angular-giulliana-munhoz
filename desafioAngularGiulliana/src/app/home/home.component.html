@@ -44,15 +44,17 @@
   <!--/Carroussel-->
 
   <!--CardsHerois-->
-  <div class="card-group">
+  <div class="card-text">
+    <div class="row">
     
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+  <div class="card" *ngFor='let character of characters' style="width: 18rem;">
+    <img src={{character.image}} class="card-img-top" alt="Imagem do Herói ">
+    <div class="card-body" id={{character.id}}>
+      <h5 class="card-title">{{character.name}}</h5>
       <p class="card-text">Conheça este Herói</p>
-      <a href="#detahes" class="btn btn-danger">Sobre..</a>
+      <a href="#detahes"  class="btn btn-danger">Sobre..</a>
     </div>
   </div>
+</div>
 </div>
   <!--/CardsHerois-->
